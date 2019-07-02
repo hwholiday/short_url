@@ -2,8 +2,8 @@ package short_url
 
 import (
 	"fmt"
-	"seqsvr/base/db"
-	"seqsvr/model/sequence"
+	"short_url/base/db"
+	"short_url/model/sequence"
 	"sync"
 
 	"github.com/go-redis/redis"

@@ -1,8 +1,8 @@
 package model
 
 import (
-	"seqsvr/model/sequence"
-	"seqsvr/model/short_url"
+	"short_url/model/sequence"
+	"short_url/model/short_url"
 )
 
 func Init() {

@@ -2,8 +2,8 @@ package db
 
 import (
 	"fmt"
-	"seqsvr/base/config"
-	"seqsvr/base/tool"
+	"short_url/base/config"
+	"short_url/base/tool"
 	"time"
 
 	"github.com/go-redis/redis"

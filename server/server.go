@@ -9,8 +9,8 @@ package server
 
 import (
 	"net/http"
-	"seqsvr/base"
-	"seqsvr/base/tool"
+	"short_url/base"
+	"short_url/base/tool"
 	"time"
 
 	"github.com/gin-gonic/gin"

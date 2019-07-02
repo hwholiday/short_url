@@ -1,7 +1,7 @@
 package tool
 
 import (
-	"seqsvr/base/config"
+	"short_url/base/config"
 )
 
 func Init() {
@@ -17,5 +17,3 @@ func getLoggerOptions() *Options {
 	op.MaxAge = config.GetToolLogConfig().GetMaxAge()
 	return op
 }
-
-

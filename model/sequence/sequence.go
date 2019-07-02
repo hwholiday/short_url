@@ -2,7 +2,7 @@ package sequence
 
 import (
 	"fmt"
-	"seqsvr/base/db"
+	"short_url/base/db"
 	"sync"
 
 	"github.com/go-redis/redis"

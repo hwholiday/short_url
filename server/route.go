@@ -7,8 +7,8 @@
 package server
 
 import (
-	"seqsvr/controller"
-	"seqsvr/model/short_url"
+	"short_url/controller"
+	"short_url/model/short_url"
 	"strings"
 
 	"github.com/gin-contrib/cors"

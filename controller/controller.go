@@ -8,8 +8,8 @@ package controller
 
 import (
 	"fmt"
-	"seqsvr/model"
-	"seqsvr/model/short_url"
+	"short_url/model"
+	"short_url/model/short_url"
 	"sync"
 )
 

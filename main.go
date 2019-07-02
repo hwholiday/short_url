@@ -2,9 +2,9 @@ package main
 
 import (
 	"flag"
-	"seqsvr/base"
-	"seqsvr/controller"
-	"seqsvr/server"
+	"short_url/base"
+	"short_url/controller"
+	"short_url/server"
 )
 
 var path = flag.String("p", "./conf/", "")

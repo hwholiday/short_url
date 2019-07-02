@@ -1,8 +1,8 @@
 package sequence
 
 import (
-	"seqsvr/base"
-	"seqsvr/base/tool"
+	"short_url/base"
+	"short_url/base/tool"
 )
 
 func (s *service) GetBorrowOrder() (int64, error) {

@@ -1,9 +1,9 @@
 package base
 
 import (
-	"seqsvr/base/config"
-	"seqsvr/base/db"
-	"seqsvr/base/tool"
+	"short_url/base/config"
+	"short_url/base/db"
+	"short_url/base/tool"
 )
 
 func Init(path string) {

@@ -2,8 +2,8 @@ package short_url
 
 import (
 	"errors"
-	"seqsvr/base"
-	"seqsvr/base/tool"
+	"short_url/base"
+	"short_url/base/tool"
 
 	"go.uber.org/zap"
 )

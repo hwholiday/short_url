@@ -8,7 +8,7 @@ package controller
 
 import (
 	"fmt"
-	"seqsvr/base"
+	"short_url/base"
 	"strconv"
 	"strings"
 
