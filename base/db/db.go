@@ -1,6 +1,7 @@
 package db
 
 import (
+	"go.mongodb.org/mongo-driver/mongo"
 	"sync"
 
 	"github.com/go-redis/redis"
@@ -12,6 +13,7 @@ var (
 	err     error
 	mysqlDb *xorm.Engine
 	redisDb *redis.Client
+	mgo     *mongo.Client
 	m       sync.Mutex
 )
 
@@ -20,6 +22,7 @@ func Init() {
 	defer m.Unlock()
 	initMysql()
 	initRedis()
+	initMongoDb()
 }
 
 func GetMySqlDb() *xorm.Engine {

@@ -10,6 +10,7 @@ var (
 	mysqlConfig defaultMysqlConfig
 	utilsConfig defaultLogToolConfig
 	redisConfig defaultRedisConfig
+	mgoConfig   defaultMgoConfig
 	m           sync.Mutex
 )
 
@@ -30,6 +31,9 @@ func Init(path string) {
 	if err = cfg.Section("redis").MapTo(&redisConfig); err != nil {
 		panic(err)
 	}
+	if err = cfg.Section("mongodb").MapTo(&mgoConfig); err != nil {
+		panic(err)
+	}
 	if cfg, err = ini.Load(filepath.Join(path, "tool.ini")); err != nil {
 		panic(err)
 	}
@@ -47,4 +51,8 @@ func GetToolLogConfig() (fig toolLogConfig) {
 
 func GetRedisConfig() (fig rdsConfig) {
 	return redisConfig
+}
+
+func GetMgoConfig() (fig mgConfig) {
+	return mgoConfig
 }
