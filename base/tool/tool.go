@@ -14,7 +14,7 @@ func Init() {
 	one.Do(func() {
 		initLogger(getLoggerOptions())
 		//NewWorker ID 填入 分布式的服务唯一ID从1到1024
-		if err = NewWorker(1); err != nil {
+		if err = NewWorker(config.GetToolLogConfig().GetDcId()); err != nil {
 			panic(err)
 		}
 	})

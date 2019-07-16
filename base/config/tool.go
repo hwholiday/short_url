@@ -7,6 +7,7 @@ type toolLogConfig interface {
 	GetMaxSize() int
 	GetMaxBackups() int
 	GetMaxAge() int
+	GetDcId() int64
 }
 
 type defaultLogToolConfig struct {
@@ -16,6 +17,7 @@ type defaultLogToolConfig struct {
 	MaxSize     int    `ini:"maxSize"`
 	MaxBackups  int    `ini:"maxBackups"`
 	MaxAge      int    `ini:"maxAge"`
+	Dc          int64  `ini:"dc"`
 }
 
 func (m defaultLogToolConfig) GetDevelopment() bool {
@@ -39,4 +41,7 @@ func (m defaultLogToolConfig) GetMaxBackups() int {
 }
 func (m defaultLogToolConfig) GetMaxAge() int {
 	return m.MaxAge
+}
+func (m defaultLogToolConfig) GetDcId() int64 {
+	return m.Dc
 }
