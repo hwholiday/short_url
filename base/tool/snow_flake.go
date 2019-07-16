@@ -16,6 +16,16 @@ const (
 	startTime   int64 = 1563172432000 // 如果在程序跑了一段时间修改了epoch这个值 可能会导致生成相同的ID //毫秒
 )
 
+var wk *Worker
+
+func GetWorker() *Worker {
+	if wk == nil {
+		panic("GetWorker not init")
+	} else {
+		return wk
+	}
+}
+
 type Worker struct {
 	mu        sync.Mutex
 	timestamp int64
@@ -23,16 +33,17 @@ type Worker struct {
 	number    int64
 }
 
-func NewWorker(workerId int64) (*Worker, error) {
+func NewWorker(workerId int64) error {
 	if workerId < 0 || workerId > workerMax {
-		return nil, errors.New("Worker ID excess of quantity")
+		return errors.New("Worker ID excess of quantity")
 	}
-	// 生成一个新节点
-	return &Worker{
+	wk = &Worker{
 		timestamp: 0,
 		workerId:  workerId,
 		number:    0,
-	}, nil
+	}
+	// 生成一个新节点
+	return nil
 }
 
 func (w *Worker) GetId() int64 {
