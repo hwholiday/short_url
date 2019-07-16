@@ -57,8 +57,8 @@ func (s *service) CreateLinks(url, key string, status int) (string, error) {
 	links = new(Links)
 	links.Status = status
 	links.Keyword = keyword
-	links.CreateTime = base.GetTime()
-	links.UpdateTime = base.GetTime()
+	links.CreateTime = tool.GetTime()
+	links.UpdateTime = tool.GetTime()
 	links.Url = url
 	if _, err = s.m.InsertOne(links); err != nil {
 		tool.GetLogger().Warn("[GetLinksByUrl] undefined", zap.Any("status", status))

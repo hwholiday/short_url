@@ -2,10 +2,23 @@ package tool
 
 import (
 	"short_url/base/config"
+	"sync"
+)
+
+var (
+	worker *Worker
+	once   *sync.Once
+	err    error
 )
 
 func Init() {
-	initLogger(getLoggerOptions())
+	once.Do(func() {
+		initLogger(getLoggerOptions())
+		//NewWorker ID 填入 分布式的服务唯一ID从1到1024
+		if worker, err = NewWorker(1); err != nil {
+			panic(err)
+		}
+	})
 }
 func getLoggerOptions() *Options {
 	op := &Options{}
